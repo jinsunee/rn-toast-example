@@ -1,4 +1,4 @@
-package com.toastexample;
+package com.toastexample.toast;
 
 import android.widget.Toast;
 
@@ -11,15 +11,16 @@ import com.facebook.react.bridge.ReactMethod;
 import java.util.Map;
 import java.util.HashMap;
 
-public class ToastModule extends ReactContextBaseJavaModule {
+public class ToastModule extends ReactContextBaseJavaModule  {
   private static ReactApplicationContext reactContext;
-
   private static final String DURATION_SHORT_KEY = "SHORT";
   private static final String DURATION_LONG_KEY = "LONG";
 
+  private ReactContext mReactContext;
+
   ToastModule(ReactApplicationContext context) {
     super(context);
-    reactContext = context;
+    mReactContext = context;
   }
 
   @Override
